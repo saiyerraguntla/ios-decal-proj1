@@ -16,11 +16,8 @@ class AddTaskViewController: UIViewController {
     
     var model:Model!
     
-
     @IBAction func doneAddingTask(sender:AnyObject) {
-        model.addToModel(userTask.text!)        
+        model.addToModel(userTask.text!)
     }
-    
-    
     
 }

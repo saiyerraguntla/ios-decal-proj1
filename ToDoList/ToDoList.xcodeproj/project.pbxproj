@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		322DB1651C8F739400A5DE48 /* CountTasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 322DB1641C8F739400A5DE48 /* CountTasksViewController.swift */; };
 		3270962B1C87795A00BB849E /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3270962A1C87795A00BB849E /* AddTaskViewController.swift */; };
 		3270962D1C87AC7C00BB849E /* ToDoListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3270962C1C87AC7C00BB849E /* ToDoListTableViewCell.swift */; };
 		3270962F1C881ADE00BB849E /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3270962E1C881ADE00BB849E /* Model.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		322DB1641C8F739400A5DE48 /* CountTasksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountTasksViewController.swift; sourceTree = "<group>"; };
 		3270962A1C87795A00BB849E /* AddTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
 		3270962C1C87AC7C00BB849E /* ToDoListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoListTableViewCell.swift; sourceTree = "<group>"; };
 		3270962E1C881ADE00BB849E /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 			children = (
 				328A8E791C875C1E00DF66F7 /* AppDelegate.swift */,
 				328A8E7B1C875C1E00DF66F7 /* ToDoListViewController.swift */,
+				322DB1641C8F739400A5DE48 /* CountTasksViewController.swift */,
 				3270962E1C881ADE00BB849E /* Model.swift */,
 				328A8E7D1C875C1E00DF66F7 /* Main.storyboard */,
 				327096341C890DDA00BB849E /* check-64.png */,
@@ -157,6 +160,7 @@
 				3270962B1C87795A00BB849E /* AddTaskViewController.swift in Sources */,
 				328A8E7A1C875C1E00DF66F7 /* AppDelegate.swift in Sources */,
 				3270962D1C87AC7C00BB849E /* ToDoListTableViewCell.swift in Sources */,
+				322DB1651C8F739400A5DE48 /* CountTasksViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

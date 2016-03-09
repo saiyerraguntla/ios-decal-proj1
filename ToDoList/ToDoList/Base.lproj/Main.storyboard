@@ -29,33 +29,23 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hya-dN-YX6">
-                                            <rect key="frame" x="517" y="0.0" width="29" height="35"/>
+                                            <rect key="frame" x="556" y="8" width="21" height="27"/>
                                             <state key="normal" image="check-64.png"/>
                                             <connections>
                                                 <action selector="completedTask:" destination="61N-QH-4vd" eventType="touchUpInside" id="Z0w-vO-ZPj"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eRE-CI-x3A">
-                                            <rect key="frame" x="559" y="7" width="26" height="28"/>
-                                            <state key="normal" image="Red_x.png"/>
-                                            <connections>
-                                                <action selector="deleteTask:" destination="61N-QH-4vd" eventType="touchUpInside" id="q8p-rb-wYN"/>
-                                            </connections>
-                                        </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="RPu-OO-eB7" firstAttribute="centerY" secondItem="kSM-f0-x9x" secondAttribute="centerY" id="74f-Zb-Ve8"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="Hya-dN-YX6" secondAttribute="trailing" constant="46" id="IBV-Rl-3PQ"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="eRE-CI-x3A" secondAttribute="trailing" constant="7" id="Jpj-B3-9kk"/>
-                                        <constraint firstItem="eRE-CI-x3A" firstAttribute="top" secondItem="kSM-f0-x9x" secondAttribute="topMargin" constant="-4" id="VHE-Ty-l4c"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Hya-dN-YX6" secondAttribute="trailing" constant="15" id="Soy-8t-NoY"/>
+                                        <constraint firstAttribute="topMargin" secondItem="Hya-dN-YX6" secondAttribute="top" id="ccA-1K-Igd"/>
                                         <constraint firstItem="RPu-OO-eB7" firstAttribute="centerX" secondItem="kSM-f0-x9x" secondAttribute="centerX" id="dD5-cw-31p"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="Hya-dN-YX6" secondAttribute="bottom" id="kRH-vg-Qdp"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <gestureRecognizers/>
                                 <connections>
                                     <outlet property="completedButton" destination="Hya-dN-YX6" id="Kaa-UU-JaR"/>
-                                    <outlet property="deleteButton" destination="eRE-CI-x3A" id="A8I-QM-AtQ"/>
                                     <outlet property="toDoItemTextLabel" destination="RPu-OO-eB7" id="hCg-EV-09w"/>
                                 </connections>
                             </tableViewCell>
@@ -155,10 +145,10 @@
             </objects>
             <point key="canvasLocation" x="135" y="-49"/>
         </scene>
-        <!--View Controller-->
+        <!--Count Tasks View Controller-->
         <scene sceneID="cJL-xG-wd2">
             <objects>
-                <viewController id="WyI-Aa-GZ2" sceneMemberID="viewController">
+                <viewController id="WyI-Aa-GZ2" customClass="CountTasksViewController" customModule="ToDoList" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="85b-qX-LWK"/>
                         <viewControllerLayoutGuide type="bottom" id="m83-FW-LYN"/>
@@ -167,7 +157,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0 Tasks Completed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BrX-Yc-iBy">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BrX-Yc-iBy">
                                 <rect key="frame" x="101" y="235" width="297" height="130"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -180,6 +170,9 @@
                             <constraint firstItem="BrX-Yc-iBy" firstAttribute="centerX" secondItem="Yc9-la-FeU" secondAttribute="centerX" id="mqi-xB-XNQ"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="TasksCountLabel" destination="BrX-Yc-iBy" id="NsZ-Tp-6dF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Njj-jF-frU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -205,7 +198,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Red_x.png" width="30" height="30"/>
         <image name="check-64.png" width="32" height="32"/>
     </resources>
 </document>

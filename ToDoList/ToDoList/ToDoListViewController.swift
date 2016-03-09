@@ -11,7 +11,7 @@ import UIKit
 class ToDoListViewController: UITableViewController {
     
     var model:Model!
-    //var numTasksCompleted:Int
+    var completedCount=0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,13 +29,16 @@ class ToDoListViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("ToDoCell", forIndexPath: indexPath) as! ToDoListTableViewCell
-        
+        let cell = tableView.dequeueReusableCellWithIdentifier("ToDoCell", forIndexPath: indexPath) as! ToDoListTableViewCell        
         cell.toDoItemTextLabel.text = model.getModel()[indexPath.row]
-        if cell.completedButtonPressed {
-            cell.toDoItemTextLabel.text=""
-        }
         return cell
+    }
+    
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if (editingStyle == UITableViewCellEditingStyle.Delete) {
+            model.deleteFromModel(indexPath.row)
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+        }
     }
 
     
@@ -48,6 +51,20 @@ class ToDoListViewController: UITableViewController {
             let nav = segue.destinationViewController as! UINavigationController
             let targetVC=nav.viewControllers.first as! AddTaskViewController
             targetVC.model = self.model
+        }
+        
+        if segue.identifier == "goToViewA" {
+            //set completedCount
+            completedCount=0
+            let cells = self.tableView.visibleCells as! Array<ToDoListTableViewCell>
+            for cell in cells {
+                let elapsedTime = NSDate().timeIntervalSinceDate(cell.timeAdded)
+                if elapsedTime>86400 {
+                    completedCount++
+                }
+            }
+            let targetVC = segue.destinationViewController as! CountTasksViewController
+            targetVC.completedCount = self.completedCount
         }
 
     }

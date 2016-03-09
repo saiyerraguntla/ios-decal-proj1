@@ -9,7 +9,8 @@
 import UIKit
 
 class Model {
-    var model:[String];
+    var model:[String]
+    var numTasks=0
     
     init() {
         model=[];
@@ -17,6 +18,10 @@ class Model {
     
     func getModel() -> [String]{
         return model
+    }
+    
+    func deleteFromModel(positionIndex:Int) {
+        model.removeAtIndex(positionIndex)
     }
     
     func addToModel(task:String) {
@@ -27,7 +32,4 @@ class Model {
         model.removeAtIndex(position)
     }
     
-    func getNumTasks() -> Int {
-        return 0
-    }
 }
